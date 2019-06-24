@@ -1,0 +1,48 @@
+<head>
+<link href="<%= url('/css/styles.css') %>" rel="stylesheet" type="text/css" />
+<title>Students | Student Management</title>
+</head>
+
+<body>
+
+<div class="header">
+<h1>student management > students</h1>
+</div>
+
+<div class="top-nav">
+  <div id="" class="top-nav-btn">
+    <a href="/"> home </a>
+  </div>
+  <div id="top-nav-btn-current" class="top-nav-btn">
+    <a href="/students"> students </a>
+  </div>
+  <div id="" class="top-nav-btn">
+    <a href="/groups"> groups </a>
+  </div>
+</div>
+
+<div class="top-toolbar">
+  <div id="" class="top-toolbar-btn">
+    <a href="/add_student"> <i class="fas fa-plus-square"></i> add student </a>
+  </div>
+</div>
+
+<div class="card-container">
+
+  <% @students.each do |student| %>
+    <div class="student-card">
+      <div class="student-card-btn">
+        <div class="student-card-btn-icon"> <i class="fas fa-edit"></i> edit </div>
+        <div class="student-card-btn-icon"> <i class="fas fa-trash-alt"></i> delete </div>
+      </div>
+      <p class="card-label"> Student ID: <span class="card-info"> <%= student[:id] %> </span> </p>
+      <p class="card-label"> Student Name: <span class="card-info"> <%= student[:name] %> </span> 
+      </p>
+      <p class="card-label"> Email Address: <span class="card-info"> <%= student[:email] %> </span> 
+      </p>
+    </div>
+  <% end %>
+
+</div>
+
+</body>
